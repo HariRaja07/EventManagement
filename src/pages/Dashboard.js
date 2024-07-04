@@ -2,7 +2,7 @@
 import React from 'react';
 import { Box, Grid, Paper, Typography, Avatar, IconButton, TextField, Button, InputAdornment, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import { Search, FilterList, ViewList, LocationOn, Event, Settings, Help, Person } from '@mui/icons-material';
-import Footer from '../components/Footer';
+/*import Footer from '../components/Footer';
 import Header from '../components/Header';
 import MainContent from '../components/MainContent';
 import Sidebar from '../components/Sidebar';
@@ -13,12 +13,25 @@ const Dashboard = () => {
         <Sidebar />
         <Box component="main" sx={{ flexGrow: 1, p: 0 }}>
           <Header />
-          <MainContent />
+          <MainContent/>
         </Box>
       </Box>
-      <Footer />
+      <Footer/>
     </Box>
   );
 };
 
+export default Dashboard;*/
+
+import { BrowserRouter as Router } from 'react-router-dom';
+import Layout from '../components/Layout';
+
+const Dashboard = () => (
+  <Router>
+    <Layout />
+  </Router>
+);
+
 export default Dashboard;
+
+

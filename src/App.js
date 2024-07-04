@@ -2,6 +2,7 @@
 import React from 'react';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import Dashboard from './pages/Dashboard';
+import Footer from './components/Footer';
 
 const theme = createTheme({
   palette: {

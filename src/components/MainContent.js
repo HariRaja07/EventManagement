@@ -1,60 +1,18 @@
-import { Box, Grid, Paper, Typography, Avatar, IconButton, TextField, Button, InputAdornment, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import { Search, FilterList, ViewList, LocationOn, Event, Settings, Help, Person } from '@mui/icons-material';
+import { Box } from '@mui/material';
+import { Routes, Route } from 'react-router-dom';
+import BookedEvents from '../pages/BookedEvents';
+import Settings from '../pages/Settings';
+import OpenDashboard from '../pages/OpenDashboard';
 
 const MainContent = () => (
-    <Box sx={{ top: 100, width: '100%', maxWidth: '1636px', margin: '0 auto', position: 'absolute', p: 3 }} zIndex={2}>
-      <Typography variant="h6" gutterBottom sx={{ color: 'white'}}>
-        Popular Events by Qatar Hub
-      </Typography>
-      <Box sx={{ display: 'flex', overflowX: 'scroll', mb: 3,mt: -1 }}>
-        <EventCard
-          eventImage="/images/download.jpg"
-          eventTitle="Event 1"
-          date="2024-07-05"
-          place="Doha, Qatar"
-        />
-        <EventCard
-          eventImage="/images/corporate-events-3.jpg"
-          eventTitle="Event 2"
-          date="2024-07-12"
-          place="Doha, Qatar"
-        />
-        {/* Add more EventCards as needed */}
-      </Box>
-      <Typography variant="h6" gutterBottom>
-        Choose by Category
-      </Typography>
-      <Grid container spacing={3}>
-        {/* Add category cards or buttons here */}
-        <Grid item xs={12} sm={6} md={4}>
-          <Paper sx={{ p: 2 }}>
-            <Typography>Category 1</Typography>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Paper sx={{ p: 2 }}>
-            <Typography>Category 2</Typography>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Paper sx={{ p: 2 }}>
-            <Typography>Category 3</Typography>
-          </Paper>
-        </Grid>
-      </Grid>
-    </Box>
-  );
-  
-  const EventCard = ({ eventImage, eventTitle, date, place }) => (
-    <Paper sx={{ p: 2, mr: 2, minWidth: 240, borderRadius: 3, ml: 3, mb: 3, mt: 3}}>
-      <img src={eventImage} alt={eventTitle} style={{ width: 240,height: 150, borderRadius: '8px', marginBottom: '8px' }} />
-      <Typography variant="subtitle1" textAlign={'center'}>{eventTitle}</Typography>
-      <Typography variant="body2" textAlign={'center'}>{date}</Typography>
-      <Typography variant="body2" textAlign={'center'}>{place}</Typography>
-      <center><Button variant="contained" color="primary" sx={{ mt: 1 , color: 'white'}}>
-        Join
-      </Button></center>
-    </Paper>
-  );
+  <Box zIndex={2} component="main" sx={{ top: 80, position: 'absolute', flexGrow: 1, p: 3, mt: '0', ml: '0' }}>
+    <Routes>
+      <Route path="/events" element={<BookedEvents />} />
+      <Route path="/settings" element={<Settings />} />
+      <Route path="/" element={<OpenDashboard />} />
+      {/* Add more routes as needed */}
+    </Routes>
+  </Box>
+);
 
-  export default MainContent;
+export default MainContent;
